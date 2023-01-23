@@ -1,0 +1,1 @@
+{"name":"Local: probB","url":"e:\\yo\\materias\\Icpc\\vsCode\\practicasCodigo\\probB.cpp","tests":[{"id":1673991997238,"input":"2","output":"1 2 1"},{"id":1673992010587,"input":"4","output":"1 2 1 3 1 2 1 4 1 2 1 3 1 2 1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\yo\\materias\\Icpc\\vsCode\\practicasCodigo\\probB.cpp","group":"local","local":true}
