@@ -29,7 +29,6 @@ int main(){
     int resp=chan(cant);
     //resp+=chan(aux);
     cout<<resp<<endl;
-
     return 0;
 }
 int chan(int cant){
