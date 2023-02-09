@@ -17,24 +17,24 @@ typedef pair<string,int> parS;
 int main(){
     fast;
     string cad;
-    llnsi k,n,aux;
+    ll k,n,aux;
     ll nro;
     cin>>n>>k;
     aux=n/2;
     nro=-1;
     bool band=false;
-    if(n!=1){
-    while(k<=aux){
-        if(n%k==0){
-            band=true;
-            nro=k;
-            break;
-        }
-        k+=1;
+    vector<int> listDiv;
+    for(int i=1;i*i<=n;i++){ //recorre mientras no se 
+        if(n%i==0){
+            listDiv.pb(i);
+            if(i*i!=n){ listDiv.pb(n/i);}
+        }else{}
     }
+    sort(listDiv.begin(),listDiv.end());
+    if(k>listDiv.size()){
+        cout<<-1<<endl;
     }else{
-        nro=1;
+        cout<<listDiv[k-1]<<endl;
     }
-    cout<<nro<<endl;
     return 0;
 }
