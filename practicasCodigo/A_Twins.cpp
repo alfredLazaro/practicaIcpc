@@ -30,15 +30,17 @@ int main(){
     //cout<<sum<<"sum";
     int x=0;
     cont=0;
-    if(sum%2==0){
-        sum/=2;
+    sum/=2;
+    sum+=1;
+    /* if(sum%2==0){
+        sum/=2; //de 4 es 2 pero debe ser 3
     }else{
         sum/=2;
         sum+=1;
-    }
+    } */
         rfori(i,0,cant-1){
             x+=arra[i];
-            if(x<=sum){
+            if(x<sum){
                 cont+=1;
             }else{
                 cont+=1;
