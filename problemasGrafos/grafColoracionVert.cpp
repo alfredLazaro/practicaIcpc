@@ -52,8 +52,8 @@ void IngresarMatriz(int ad[][vertices],int nds,int arst){
         cin>>nodoi;
         cout<<"\tN. termino:";
         cin>>nodof;
-        ad[nodoi-1][nodof-1]=1;
-        ad[nodof-1][nodoi-1]=1;
+        ad[nodoi-1][nodof-1]=1; //grafo de doble sentido
+        ad[nodof-1][nodoi-1]=1; //grafo de doble sentido
     }
     //matriz de Adyacencia
     /* fori(i,0,nds){
@@ -73,22 +73,22 @@ void Greedy(int ad[][vertices],int nds){
         aux=1;
         while(aux==1){
             fori(j,0,nds){
-                if(ad[i][j]==1){
-                    if(v[i].color==v[j].color){ //al principio {0,0}
+                if(ad[i][j]==1){ //es nodo? (es adyacente al actual)
+                    if(v[i].color==v[j].color){ //el color de nodo es el mismo
                         zz=1; //
-                    }else{}
+                    }else{} 
                 }else{}
             }
-        }
-        if(zz==1){
-            aux=1;
-            zz=0;
-            v[i].color++;
-        }else{
-            aux=0;
-            if(v[i].color>max){
-                max=v[i].color;
-            }else{}
+            if(zz==1){
+                aux=1;
+                zz=0;
+                v[i].color++;
+            }else{
+                aux=0;
+                if(v[i].color>max){
+                    max=v[i].color;
+                }else{}
+            }
         }
     }
     cout<<"\n\tAlgoritmo voraz\n"<<"\tmaxcolor="<<max<<endl;
@@ -108,7 +108,45 @@ void WelshPowell(int ad[][vertices],int nds){
     ver v[nds];
 }
 int main(){
-    fast;
+    //fast;
+    int i,j,cant_nodos,cant_aristas,ad[vertices][vertices];
+    char s,N,n;
+    do{  
+    cout << "\n\t\tALGORITMOS HEURISTICOS PARA EL COLOREADO DE GRAFOS\n";  
+    cout << "\t\t--------------------------------------------------\n"; 
 
+    cout << "\n\n\t Ingrese Datos \n"; 
+    cout << "\n\t Num. Nodos: ";
+    cin >> cant_nodos;
+    cout << "\t Aristas: ";
+    cin >> cant_aristas;  
+    
+    //Aqui se  crea la matriz de  adyacencia
+    IngresarMatriz(ad,cant_nodos,cant_aristas);//,ad);
+    //Mostrar Matriz de Adyacencia
+    /* cout << "\n\t";
+    for(i=0;i < nds;i++)
+        { for(j=0;j < nds;j++)
+            ad[i][j]=ad[i][j]; 
+            cout << "\n\t";
+        }
+    */    
+    //Se colorea vertice  a  vertice en  el  orden inicial
+    Greedy(ad,cant_nodos);//,ad);  
+    //Se colorea vertice  a  vertice iniciando  por los de  mayor  grado  
+    /* WelshPowell(ad,cant_nodos);//,ad);
+    //Se colorea vertice  a  vertice iniciando  por los de  menor  grado
+    MMI(ad,cant_nodos);//,ad);
+    
+    cout << "\n\tSi desea continuar presione cualquier tecla \n\tSi no escriba 'n' o 'N': ";
+    s=getch();
+    system("cls");
+    exit(0); */    
+    }while(s!='N' && s!='n');
+    cout << "Hasta Luego!!!!";
+    //Sleep(1600);
+    
+    cout << "\n\n";
+    system("PAUSE");
     return 0;
 }
