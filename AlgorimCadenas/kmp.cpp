@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define fori(i,ii,n) for(int i=0;i<n;i++)
+#define fori(i,ii,n) for(int i=ii;i<n;i++)
 #define nfori(i,ii,n) for(int i=n;i>=ii;i--)
 #define dfori(i,ii,s,n) for(int i=ii;i<n;i+=s)
 #define pb push_back
@@ -33,6 +33,7 @@ void KMP(string texto, string pattern){
     }else{}
     if(m<n){
         cout<<"Pattern not found";
+        return;
     }else{}
     
     //almacena el indice de la mejor coincidencia parcialk
