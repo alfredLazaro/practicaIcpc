@@ -19,7 +19,9 @@ int main(){
     fast;
     int t;
     string text="ABCABAABACABAC";
+               //0123456789101112
     string pattern = "CAB";
+                    //012
     KMP(text,pattern);
     return 0;
 }
