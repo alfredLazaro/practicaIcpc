@@ -33,17 +33,17 @@ int main(){
 		int conta=0,col=0,fil=0;
 		int tam2=tam*tam,tamv=tam;
 		while(conta<tam2){
-			ant=arr[fil][col];
 			fori(i,fil,tam){
+				ant=arr[fil][col];
 				fori(j,col,tam){
 					act=arr[i][j];
 					if(ant>act){
 						cont+=1;
-						
-						cout<<ant<<"   "<<act;
+						//cout<<ant<<"   "<<act;
 					}else{}
 				}
 			}
+			//fil+=1;
 			col+=1;
 			conta+=1;
 			if(conta==tamv){
